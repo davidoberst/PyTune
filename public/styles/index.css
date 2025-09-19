@@ -1,0 +1,197 @@
+body{
+    background: linear-gradient(to right, #1d1c1d,#0f0f0f)
+
+}
+
+.container1{
+    margin-top: 100px;
+    width: 230px;
+    height: 230px;
+    border-radius: 30px;
+    background: linear-gradient(to left,white,#b4f1e8);
+}
+
+.mp3_title{
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    margin-top: 45px;
+    color: white
+}
+
+.mp3_time{
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    margin-top: 20px;
+    font-size: 28px;
+    color: white;
+    font-weight: 300;
+ 
+}
+
+.status_bar{
+    width: 60%;
+    height: 15px;
+    background-color: #bff0e9;
+    border-radius: 100px;
+}
+
+.container_btns {
+   
+  display: flex;           /* activa flexbox */
+  justify-content: center; /* centra horizontalmente */
+  gap: 30px;               /* espacio entre botones */
+  margin-top: 20px;
+}
+
+/* Estilo general de los botones */
+.btnPlay, .btnBack, .btnNext {
+  margin-top: 30px;
+  width: 60px;
+  height: 60px;
+  background: #bff0e9;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  transition: 0.2s;
+}
+
+.container_btns {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.btnPlay, .btnBack, .btnNext {
+  margin-top: 30px;
+  width: 60px;
+  height: 60px;
+  background: #bff0e9;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  transition: 0.2s;
+ 
+}
+
+.btnPlay:hover, .btnBack:hover, .btnNext:hover {
+  background: #90e0d1;
+  transform: scale(1.1);
+}
+
+/* ▶ Play */
+.btnPlay::before {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-top: 14px solid transparent;
+  border-bottom: 14px solid transparent;
+  border-left: 22px solid #333;
+  left: 22px;
+}
+
+/* ⏮ Back */
+.btnBack::before,
+.btnBack::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 0;
+  height: 0;
+  border-top: 12px solid transparent;
+  border-bottom: 12px solid transparent;
+  border-right: 18px solid #333;
+}
+
+/* primer triángulo más a la izquierda */
+.btnBack::before {
+  left: 35%;
+  transform: translate(-50%, -50%);
+}
+
+/* segundo triángulo más a la derecha */
+.btnBack::after {
+  left: 55%;
+  transform: translate(-50%, -50%);
+}
+
+/* ▶ Play (ya estaba bien centrado) */
+.btnPlay::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-40%, -50%); /* ajustamos leve para centrar visualmente */
+  width: 0;
+  height: 0;
+  border-top: 14px solid transparent;
+  border-bottom: 14px solid transparent;
+  border-left: 22px solid #333;
+}
+
+/* ⏭ Next */
+.btnNext::before,
+.btnNext::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 0;
+  height: 0;
+  border-top: 12px solid transparent;
+  border-bottom: 12px solid transparent;
+  border-left: 18px solid #333;
+}
+
+.btnNext::before {
+  left: 45%;
+  transform: translate(-50%, -50%);
+}
+
+.btnNext::after {
+  left: 65%;
+  transform: translate(-50%, -50%);
+}
+
+
+.wave {
+   padding-top: 160px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  gap: 4px;
+  height: 60px;
+}
+
+.wave span {
+
+  display: block;
+  width: 10px;
+  height: 60px;
+  background: #58d6c5;
+  border-radius: 2px;
+  animation: waveAnim 1s infinite ease-in-out;
+}
+
+/* Diferentes delays para que no se muevan igual */
+.wave span:nth-child(1) { animation-delay: 0s; }
+.wave span:nth-child(2) { animation-delay: 0.1s; }
+.wave span:nth-child(3) { animation-delay: 0.2s; }
+.wave span:nth-child(4) { animation-delay: 0.3s; }
+.wave span:nth-child(5) { animation-delay: 0.4s; }
+.wave span:nth-child(6) { animation-delay: 0.5s; }
+.wave span:nth-child(7) { animation-delay: 0.6s; }
+.wave span:nth-child(8) { animation-delay: 0.7s; }
+.wave span:nth-child(9) { animation-delay: 0.8s; }
+.wave span:nth-child(10) { animation-delay: 0.9s; }
+
+@keyframes waveAnim {
+  0%, 100% { height: 10px; }
+  50% { height: 60px; }
+}
